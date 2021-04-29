@@ -20,7 +20,7 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 # Finder
 # OSの言語が日本語の場合にFinderのデフォルトディレクトリを英語表記にする
-rm ~/Downloads/.localized | rm ~/Documents/.localized | rm ~/Applications/.localized | rm ~/Desktop/.localized | rm ~/Library/.localized | rm ~/Movies/.localized | rm ~/Pictures/.localized | rm ~/Music/.localized | rm ~/Public/.localized | rm /Applications/.localized
+rm ~/Downloads/.localized | rm ~/Documents/.localized | rm ~/Applications/.localized | rm ~/Desktop/.localized | rm ~/Library/.localized | rm ~/Movies/.localized | rm ~/Pictures/.localized | rm ~/Music/.localized | rm ~/Public/.localized
 # Finderの表示をカラムビューにする。「Nlsv」(リストビュー)「icnv」(アイコンビュー)、「clmv」(カラムビュー)、「Flwv」(カバーフロービュー)から選択
 defaults write com.apple.Finder FXPreferredViewStyle clmv
 # Finder のタイトルバーにフルパスを表示する
