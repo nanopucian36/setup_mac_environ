@@ -75,6 +75,7 @@ brew install postgresql
 brew install mecab
 brew install mecab-ipadic
 brew install opencv
+brew install openssl
 # brew install nginx
 # brew install Speedtest-cli
 echo "Installing Homebrew Package: Complete"
@@ -119,17 +120,19 @@ echo "Installing Apps using Homebrew Cask: Complete"
 
 # Setup pyhton
 echo "Install python..."
-pyenv install 3.6.7
 pyenv install 3.7.9
-pyenv install 3.8.3
-pyenv global 3.7.5
+pyenv install 3.8.6
+pyenv global 3.9.4
 
-# Setup .zshrc
+# Setup .zprofile
 echo "Setting up .zshrc..."
 echo '# Pyenv environment settings
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 # alias for warning of brew
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin brew"
 
@@ -139,10 +142,16 @@ eval "$(pipenv --completion)"
 # Path for brews sbin
 export PATH="/usr/local/sbin:$PATH"
 
+# Path for openssl
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
+
 # Erase beep
 setopt no_beep
 
-' >> ~/.zshrc
+' >> ~/.zprofile
 echo "Setting up .zshrc: Complete"
 
 # Install Apps from AppStore using mas
