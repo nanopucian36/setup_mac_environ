@@ -108,6 +108,7 @@ brew install --cask microsoft-powerpoint
 brew install --cask microsoft-word
 brew install --cask notion
 brew install --cask kindle
+brew install --cask background-music
 # brew install --cask processing
 # brew install --cask pycharm
 # brew install --cask skype
